@@ -36,9 +36,11 @@
                             <div class="mt-5">
                                 <h1 class="fs-5 fw-bold">Memory</h1>
                                 <div class="mt-1">
-                                    <button type="button" class="btn btn-outline-dark fs-5">8GB unified
+                                    <button id="memory-button-8gb" type="button" class="btn btn-outline-dark fs-5">8GB
+                                        unified
                                         memory</button>
-                                    <button type="button" class="btn btn-outline-dark fs-5">16GB unified memory</button>
+                                    <button id="memory-button-16gb" type="button" class="btn btn-outline-dark fs-5">16GB
+                                        unified memory</button>
                                 </div>
                             </div>
                         </section>
@@ -47,9 +49,12 @@
                             <div class="mt-5">
                                 <h1 class="fs-5 fw-bold">Storage</h1>
                                 <div class="mt-1">
-                                    <button type="button" class="btn btn-outline-dark fs-5">256GB SSD storage</button>
-                                    <button type="button" class="btn btn-outline-dark fs-5">512GB SSD storage</button>
-                                    <button type="button" class="btn btn-outline-dark fs-5">1TB SSD storage</button>
+                                    <button id="ssd-storage-256GB" type="button" class="btn btn-outline-dark fs-5">256GB
+                                        SSD storage</button>
+                                    <button id="ssd-storage-512GB" type="button" class="btn btn-outline-dark fs-5">512GB
+                                        SSD storage</button>
+                                    <button id="ssd-storage-1TB" type="button" class="btn btn-outline-dark fs-5">1TB SSD
+                                        storage</button>
                                 </div>
                             </div>
                         </section>
@@ -58,9 +63,11 @@
                             <div class="mt-5">
                                 <h1 class="fs-5 fw-bold">Choose your delevary option</h1>
                                 <div class="mt-1">
-                                    <button type="button" class="btn btn-outline-dark fs-5">Friday, Aug 25 FREE Prime
+                                    <button id="free-delevery" type="button" class="btn btn-outline-dark fs-5">Friday,
+                                        Aug 25 FREE Prime
                                         Delivery</button>
-                                    <button type="button" class="btn btn-outline-dark fs-5">Friday, Aug 21 Delivery
+                                    <button id="paid-delivery" type="button" class="btn btn-outline-dark fs-5">Friday,
+                                        Aug 21 Delivery
                                         Charge
                                         $20</button>
                                 </div>
@@ -77,15 +84,15 @@
                                         </tr>
                                         <tr>
                                             <td>Extra Memory Cost</td>
-                                            <td>$0</td>
+                                            <td>$<span id="extra-memory-cost">0</span></td>
                                         </tr>
                                         <tr>
                                             <td>Extra Storage Cost</td>
-                                            <td>$0</td>
+                                            <td>$<span id="extra-storage-cost">0</span></td>
                                         </tr>
                                         <tr>
-                                            <td>Delevary charge</td>
-                                            <td>$0</td>
+                                            <td>Delivery charge</td>
+                                            <td>$<span id="delivery-charge">0</span></td>
                                         </tr>
                                         <thead></thead>
                                         <tr class="fs-6 fw-bold">
@@ -115,6 +122,9 @@
         <hr>
         <h1 class="text-center">Total: $1299</h1>
     </footer>
+
+    <!-- Java Script -->
+    <script src="js/index.js"></script>
 </body>
 
 </html>
