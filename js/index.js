@@ -5,13 +5,15 @@ document.getElementById('memory-button-8gb').addEventListener('click', function 
     const previousMemoryCost = document.getElementById('extra-memory-cost');
     const memoryCost = parseInt(previousMemoryCost.innerText);
     const fixedCost = 0;
-    // let totalMemoryCost = memoryCost + fixedCost;
     previousMemoryCost.innerText = fixedCost;
     const previousTotalPrice = document.getElementById('total-price');
     const totalPrice = parseInt(previousTotalPrice.innerText);
     let price = totalPrice + fixedCost;
     previousTotalPrice.innerText = price;
-
+    if (totalPrice == 1479) {
+        let price = totalPrice - 180;
+        previousTotalPrice.innerText = price;
+    }
 });
 
 // 16gb button handaler
@@ -19,12 +21,14 @@ document.getElementById('memory-button-16gb').addEventListener('click', function
     const previousMemoryCost = document.getElementById('extra-memory-cost');
     const memoryCost = parseInt(previousMemoryCost.innerText);
     const fixedCost = 180;
-    // let totalMemoryCost = memoryCost + fixedCost;
     previousMemoryCost.innerText = fixedCost;
     const prviousTotalPrice = document.getElementById('total-price');
     const totalPrice = parseInt(prviousTotalPrice.innerText);
-    let price = totalPrice + fixedCost;
-    prviousTotalPrice.innerText = price;
+    if (totalPrice == 1299) {
+        let price = totalPrice + fixedCost;
+        prviousTotalPrice.innerText = price;
+    }
+
 });
 
 // ssd storage 256GB button
