@@ -1,10 +1,8 @@
-
-
-// 8bg button handler
-document.getElementById('memory-button-8gb').addEventListener('click', function () {
+// memeory buttons event handaler
+function extraMemoryCost(number) {
     const previousMemoryCost = document.getElementById('extra-memory-cost');
     const memoryCost = parseInt(previousMemoryCost.innerText);
-    const fixedCost = 0;
+    const fixedCost = number;
     previousMemoryCost.innerText = fixedCost;
     const previousTotalPrice = document.getElementById('total-price');
     const totalPrice = parseInt(previousTotalPrice.innerText);
@@ -13,22 +11,28 @@ document.getElementById('memory-button-8gb').addEventListener('click', function 
     if (totalPrice == 1479) {
         let price = totalPrice - 180;
         previousTotalPrice.innerText = price;
+        return price;
     }
+    if (totalPrice == 1299) {
+        let price = totalPrice + fixedCost;
+        previousTotalPrice.innerText = price;
+        return price;
+    }
+}
+
+// storage buttons event handaler
+/* function extraStorageCost(){
+
+} */
+
+// 8bg button handler
+document.getElementById('memory-button-8gb').addEventListener('click', function () {
+    extraMemoryCost(0);
 });
 
 // 16gb button handaler
 document.getElementById('memory-button-16gb').addEventListener('click', function () {
-    const previousMemoryCost = document.getElementById('extra-memory-cost');
-    const memoryCost = parseInt(previousMemoryCost.innerText);
-    const fixedCost = 180;
-    previousMemoryCost.innerText = fixedCost;
-    const prviousTotalPrice = document.getElementById('total-price');
-    const totalPrice = parseInt(prviousTotalPrice.innerText);
-    if (totalPrice == 1299) {
-        let price = totalPrice + fixedCost;
-        prviousTotalPrice.innerText = price;
-    }
-
+    extraMemoryCost(180);
 });
 
 // ssd storage 256GB button
