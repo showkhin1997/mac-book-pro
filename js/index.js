@@ -1,3 +1,4 @@
+// items add delete and total price function
 function itemsCost(extraItemCostId, number) {
     document.getElementById('total-price').innerText = parseInt(document.getElementById('total-price').innerText) - parseInt(document.getElementById(extraItemCostId).innerText);
     const previousCost = document.getElementById(extraItemCostId);
@@ -12,7 +13,21 @@ function itemsCost(extraItemCostId, number) {
     previousTotalPriceWithDiscount.innerText = totalPrice;
 }
 
-
+// promocode function
+function applyPromoCode() {
+    const inputField = document.getElementById('promocode-apply-input');
+    const promoCodeField = inputField.value;
+    if (promoCodeField == 'stevekaku') {
+        const previousDiscountAmount = document.getElementById('total-amount-withdiscount');
+        const discountAmount = previousDiscountAmount.innerText * 0.8;
+        console.log(discountAmount);
+        previousDiscountAmount.innerText = discountAmount;
+    }
+    else {
+        alert("The Promocode is invalid");
+    }
+    inputField.value = '';
+}
 
 // 8bg button handler
 document.getElementById('memory-button-8gb').addEventListener('click', function () {
@@ -43,12 +58,16 @@ document.getElementById('ssd-storage-1TB').addEventListener('click', function ()
 document.getElementById('free-delevery').addEventListener('click', function () {
     itemsCost("delivery-charge", 0);
 });
-
 // paid delivery button
 document.getElementById('paid-delivery').addEventListener('click', function () {
     itemsCost("delivery-charge", 20);
 });
 
 
+
+// 
+document.getElementById('apply-button').addEventListener('click', function () {
+    applyPromoCode();
+});
 
 
