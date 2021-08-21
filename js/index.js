@@ -13,21 +13,33 @@ function itemsCost(extraItemCostId, number) {
     previousTotalPriceWithDiscount.innerText = totalPrice;
 }
 
+
+
 // promocode function
+let isApplied = false;
 function applyPromoCode() {
-    const inputField = document.getElementById('promocode-apply-input');
-    const promoCodeField = inputField.value;
-    if (promoCodeField == 'stevekaku') {
-        const previousDiscountAmount = document.getElementById('total-amount-withdiscount');
-        const discountAmount = previousDiscountAmount.innerText * 0.8;
-        console.log(discountAmount);
-        previousDiscountAmount.innerText = discountAmount;
+    if (!isApplied) {
+        const inputField = document.getElementById('promocode-apply-input');
+        const promoCodeField = inputField.value;
+        if (promoCodeField == 'stevekaku') {
+            const previousDiscountAmount = document.getElementById('total-amount-withdiscount');
+            const discountAmount = previousDiscountAmount.innerText * 0.8;
+            console.log(discountAmount);
+            previousDiscountAmount.innerText = discountAmount;
+            isApplied = true;
+        }
+        else {
+            alert("The Promocode is invalid");
+        }
+        inputField.value = '';
+
     }
     else {
-        alert("The Promocode is invalid");
+        alert("Promo code is Already Applied");
     }
-    inputField.value = '';
+
 }
+
 
 // 8bg button handler
 document.getElementById('memory-button-8gb').addEventListener('click', function () {
@@ -43,29 +55,29 @@ document.getElementById('memory-button-16gb').addEventListener('click', function
 document.getElementById('ssd-storage-256GB').addEventListener('click', function () {
     itemsCost("extra-storage-cost", 0);
 });
-// ssd storage 512GB button
+// ssd storage 512GB button 
 document.getElementById('ssd-storage-512GB').addEventListener('click', function () {
     itemsCost("extra-storage-cost", 100);
 });
-// ssd storage 1TB button
+// ssd storage 1TB button 
 document.getElementById('ssd-storage-1TB').addEventListener('click', function () {
     itemsCost("extra-storage-cost", 180);
 });
 
 
 
-// free delevery button
+// free delevery button 
 document.getElementById('free-delevery').addEventListener('click', function () {
     itemsCost("delivery-charge", 0);
 });
-// paid delivery button
+// paid delivery button 
 document.getElementById('paid-delivery').addEventListener('click', function () {
     itemsCost("delivery-charge", 20);
 });
 
 
 
-// 
+// promocode apply button handaler
 document.getElementById('apply-button').addEventListener('click', function () {
     applyPromoCode();
 });
