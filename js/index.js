@@ -5,12 +5,12 @@ document.getElementById('memory-button-8gb').addEventListener('click', function 
     const previousMemoryCost = document.getElementById('extra-memory-cost');
     const memoryCost = parseInt(previousMemoryCost.innerText);
     const fixedCost = 0;
-    let totalMemoryCost = memoryCost + fixedCost;
-    previousMemoryCost.innerText = totalMemoryCost;
-    const oldTotalPrice = document.getElementById('total-price');
-    const totalPrice = parseInt(oldTotalPrice.innerText);
-    let price = totalPrice + totalMemoryCost;
-    oldTotalPrice.innerText = price;
+    // let totalMemoryCost = memoryCost + fixedCost;
+    previousMemoryCost.innerText = fixedCost;
+    const previousTotalPrice = document.getElementById('total-price');
+    const totalPrice = parseInt(previousTotalPrice.innerText);
+    let price = totalPrice + fixedCost;
+    previousTotalPrice.innerText = price;
 
 });
 
@@ -19,11 +19,11 @@ document.getElementById('memory-button-16gb').addEventListener('click', function
     const previousMemoryCost = document.getElementById('extra-memory-cost');
     const memoryCost = parseInt(previousMemoryCost.innerText);
     const fixedCost = 180;
-    let totalMemoryCost = memoryCost + fixedCost;
-    previousMemoryCost.innerText = totalMemoryCost;
+    // let totalMemoryCost = memoryCost + fixedCost;
+    previousMemoryCost.innerText = fixedCost;
     const prviousTotalPrice = document.getElementById('total-price');
     const totalPrice = parseInt(prviousTotalPrice.innerText);
-    let price = totalPrice + totalMemoryCost;
+    let price = totalPrice + fixedCost;
     prviousTotalPrice.innerText = price;
 });
 
