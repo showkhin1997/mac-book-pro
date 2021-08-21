@@ -36,12 +36,17 @@ document.getElementById('ssd-storage-256GB').addEventListener('click', function 
     const previousStorageCost = document.getElementById('extra-storage-cost');
     const storageCost = parseInt(previousStorageCost.innerText);
     const fixedCost = 0;
-    let totalStorageCost = storageCost + fixedCost;
-    previousStorageCost.innerText = totalStorageCost;
+    previousStorageCost.innerText = fixedCost;
     const previousTotalPrice = document.getElementById('total-price');
     const totalPrice = parseInt(previousTotalPrice.innerText);
-    let price = totalPrice + totalStorageCost;
-    previousTotalPrice.innerText = price;
+    if (totalPrice == 1399) {
+        let price = totalPrice - 100;
+        previousTotalPrice.innerText = price;
+    }
+    if (totalPrice == 1479) {
+        let price = totalPrice - 180;
+        previousTotalPrice.innerText = price;
+    }
 });
 
 
@@ -50,54 +55,68 @@ document.getElementById('ssd-storage-512GB').addEventListener('click', function 
     const previousStorageCost = document.getElementById('extra-storage-cost');
     const storageCost = parseInt(previousStorageCost.innerText);
     const fixedCost = 100;
-    let totalStorageCost = storageCost + fixedCost;
-    previousStorageCost.innerText = totalStorageCost;
+    previousStorageCost.innerText = fixedCost;
     const previousTotalPrice = document.getElementById('total-price');
     const totalPrice = parseInt(previousTotalPrice.innerText);
-    let price = totalPrice + totalStorageCost;
-    previousTotalPrice.innerText = price;
+    if (totalPrice == 1299) {
+        let price = totalPrice + fixedCost;
+        previousTotalPrice.innerText = price;
+    }
+    if (totalPrice == 1479) {
+        let price = totalPrice - 180;
+        previousTotalPrice.innerText = price + 100;
+    }
 });
-
-
 // ssd storage 1TB button
 document.getElementById('ssd-storage-1TB').addEventListener('click', function () {
     const previousStorageCost = document.getElementById('extra-storage-cost');
     const storageCost = parseInt(previousStorageCost.innerText);
     const fixedCost = 180;
-    let totalStorageCost = storageCost + fixedCost;
-    previousStorageCost.innerText = totalStorageCost;
+    previousStorageCost.innerText = fixedCost;
     const previousTotalPrice = document.getElementById('total-price');
     const totalPrice = parseInt(previousTotalPrice.innerText);
-    let price = totalPrice + totalStorageCost;
-    previousTotalPrice.innerText = price;
+    if (totalPrice == 1299) {
+        let price = totalPrice + fixedCost;
+        previousTotalPrice.innerText = price;
+    }
+    if (totalPrice == 1399) {
+        let price = totalPrice - 100;
+        previousTotalPrice.innerText = price + 180;
+    }
 });
 
 
 // free delevery button
 document.getElementById('free-delevery').addEventListener('click', function () {
     const previousDeliveryCost = document.getElementById('delivery-charge');
-    const deliveryCost = parseInt(previousDeliveryCost.innerText);
+    const memoryCost = parseInt(previousDeliveryCost.innerText);
     const fixedCost = 0;
-    let totalStorageCost = deliveryCost + fixedCost;
-    previousDeliveryCost.innerText = totalStorageCost;
+    previousDeliveryCost.innerText = fixedCost;
     const previousTotalPrice = document.getElementById('total-price');
     const totalPrice = parseInt(previousTotalPrice.innerText);
-    let price = totalPrice + totalStorageCost;
+    let price = totalPrice + fixedCost;
     previousTotalPrice.innerText = price;
+    if (totalPrice == 1319) {
+        let price = totalPrice - 20;
+        previousTotalPrice.innerText = price;
+    }
 });
 
 
 // paid delivery button
 document.getElementById('paid-delivery').addEventListener('click', function () {
     const previousDeliveryCost = document.getElementById('delivery-charge');
-    const deliveryCost = parseInt(previousDeliveryCost.innerText);
+    const memoryCost = parseInt(previousDeliveryCost.innerText);
     const fixedCost = 20;
-    let totalStorageCost = deliveryCost + fixedCost;
-    previousDeliveryCost.innerText = totalStorageCost;
+    previousDeliveryCost.innerText = fixedCost;
     const previousTotalPrice = document.getElementById('total-price');
     const totalPrice = parseInt(previousTotalPrice.innerText);
-    let price = totalPrice + totalStorageCost;
+    let price = totalPrice + fixedCost;
     previousTotalPrice.innerText = price;
+    if (totalPrice == 1299) {
+        let price = totalPrice + fixedCost;
+        previousTotalPrice.innerText = price;
+    }
 });
 
 
